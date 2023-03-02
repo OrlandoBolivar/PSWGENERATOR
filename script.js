@@ -26,13 +26,26 @@ function generatePassword() {
   }
   console.log  ( "validChars = ", validChars);
 
-}
-
 // TODo the same handling for upper case
 
 // TODo  the  same  handling for  numbers
 
 // TODo the same handling for symbols
+
+// TODO: See if ateleast one  char type is chosen, if not , return with an alert saing atleast one char type should be selected for 
+// password to be generated
+  
+// You need to generated one random characcter out of the all the valid characers inn a loop, add that character to genPsw and keep 
+//repeating it for pswLength times
+
+//Finallly return the genPsw which holds the generatedpassword
+
+
+}
+
+
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
