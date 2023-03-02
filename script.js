@@ -3,6 +3,11 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
   // Ask the user what should be the password length
+  let genPsw = "";
+  let validChars = "";
+  let lcSet = "abcdefghijklmnopqrstuvwxyz";
+  let ucSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
   let pswLength = parseInt(prompt("Enter a psw length between 8 and 128"));
   //validate psw Length
   if ( pswLength < 8 || pswLength >  128 || Number.isNaN(pswLength) ){
@@ -15,7 +20,11 @@ function generatePassword() {
 
   let haveLower = confirm ( "Press OK to include lowercase letters in the password, CANCEL otherwise");
   (haveLower) ? alert (" Your psw will include Lower case chars"): alert ("Your password will not have Lower case chars")
-
+  if ( haveLower) {
+    validChars += lcSet;
+  }
+  console.log  ( "validChars = ", validChars);
+  
 }
 // Write password to the #password input
 function writePassword() {
