@@ -2,12 +2,14 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  // Ask the user what should be the password length
+  // Ask the user what should be the password length and var
   let genPsw = "";
   let validChars = "";
   let lcSet = "abcdefghijklmnopqrstuvwxyz";
   let ucSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//TODO: efine variables for  numbers  and symbols
+  let numSet = "0123456789"
+  let symbolsSet = " !@#$%^&*()_+}{<>?"
+
 
   let pswLength = parseInt(prompt("Enter a psw length between 8 and 128"));
   //validate psw Length
@@ -26,11 +28,37 @@ function generatePassword() {
   }
   console.log  ( "validChars = ", validChars);
 
-// TODo the same handling for upper case
+  let haveUpper = confirm ( "Press OK to include UPPER letters in the password, CANCEL otherwise");
+  (haveUpper) ? alert (" Your psw will include Lower case chars"): alert ("Your password will not have Lower case chars")
+  if ( haveUpper) {
+    validChars += ucSet;
+  }
+  console.log  ( "validChars = ", validChars);
 
-// TODo  the  same  handling for  numbers
+  let haveNumb = confirm ( "Press OK to include ##### in the password, CANCEL otherwise");
+  (haveNumb) ? alert (" Your psw will include Lower case chars"): alert ("Your password will not have Lower case chars")
+  if ( haveNumb) {
+    validChars += numSet;
+  }
+  console.log  ( "validChars = ", validChars);
 
-// TODo the same handling for symbols
+  let haveSymbols = confirm ( "Press OK to include symbols letters in the password, CANCEL otherwise");
+  (haveSymbols) ? alert (" Your psw will include Lower case chars"): alert ("Your password will not have Lower case chars")
+  if ( haveSymbols) {
+    validChars += symbolsSet;
+  }
+  console.log  ( "validChars = ", validChars);
+
+  if (validChars < 1) {
+    alert ("You must pick 1");
+    return;
+  }
+
+
+
+
+
+
 
 // TODO: See if ateleast one  char type is chosen, if not , return with an alert saing atleast one char type should be selected for 
 // password to be generated
