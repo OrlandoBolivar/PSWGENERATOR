@@ -7,6 +7,7 @@ function generatePassword() {
   let validChars = "";
   let lcSet = "abcdefghijklmnopqrstuvwxyz";
   let ucSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//TODO: efine variables for  numbers  and symbols
 
   let pswLength = parseInt(prompt("Enter a psw length between 8 and 128"));
   //validate psw Length
@@ -24,8 +25,14 @@ function generatePassword() {
     validChars += lcSet;
   }
   console.log  ( "validChars = ", validChars);
-  
+
 }
+
+// TODo the same handling for upper case
+
+// TODo  the  same  handling for  numbers
+
+// TODo the same handling for symbols
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
